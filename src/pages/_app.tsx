@@ -7,15 +7,26 @@ import { WagmiProvider } from 'wagmi';
 import { RainbowKitProvider } from '@rainbow-me/rainbowkit';
 
 import { config } from '../wagmi';
+import Layout from '../components/Layout';
+import { createTheme, ThemeProvider } from '@mui/material';
 
 const client = new QueryClient();
+const theme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={client}>
         <RainbowKitProvider>
-          <Component {...pageProps} />
+          <ThemeProvider theme={theme}>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </ThemeProvider>
         </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
