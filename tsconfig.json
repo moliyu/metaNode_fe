@@ -24,14 +24,20 @@
       "@/*": [
         "src/*"
       ]
-    }
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "global.d.ts",
+    "next-env.d.ts",
     "postcss.config.mjs",
-    "global.d.ts"
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

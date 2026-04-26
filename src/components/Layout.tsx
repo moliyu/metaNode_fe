@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
@@ -24,7 +25,6 @@ export function Header() {
   ];
 
   const pathname = usePathname();
-  console.log('%c Line:26 🥥 pathname', 'color:#33a5ff', pathname);
   const isActive = (url: string) => {
     if (url == '/') {
       return pathname == '/';

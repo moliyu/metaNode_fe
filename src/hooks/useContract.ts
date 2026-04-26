@@ -24,7 +24,7 @@ export const useContract = <const T extends Abi>(abi: T, address: Address) => {
     >(
       functionName: F,
       args?: A,
-      value?: BigInt,
+      value?: bigint,
     ) => {
       // @ts-ignore
       writeContract({ abi, address, functionName, args, value });
